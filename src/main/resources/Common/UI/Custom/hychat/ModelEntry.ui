@@ -1,0 +1,63 @@
+$C = "../Common.ui";
+
+
+@CustomLabelStyle = LabelStyle(
+  FontSize: 14,
+  TextColor: #bfcdd5,
+  RenderBold: true,
+  RenderUppercase: true,
+  HorizontalAlignment: Center,
+  VerticalAlignment: Center
+);
+
+@CustomStyle = TextButtonStyle(
+  Default: (Background: $C.@DefaultSquareButtonDefaultBackground, LabelStyle: @CustomLabelStyle),
+  Hovered: (Background: $C.@DefaultSquareButtonHoveredBackground, LabelStyle: @CustomLabelStyle),
+  Pressed: (Background: $C.@DefaultSquareButtonPressedBackground, LabelStyle: @CustomLabelStyle),
+  Disabled: (Background: $C.@DefaultSquareButtonDisabledBackground, LabelStyle: @CustomLabelStyle),
+  Sounds: $C.@ButtonSounds,
+);
+
+Button #Entry {
+  LayoutMode: Top;
+  Background: $C.@InputBoxBackground;
+  Padding: (Top: 5, Bottom: 5, Left: 10, Right: 10);
+  Anchor: ( Bottom: 5);
+  Group {
+    LayoutMode: Left;
+    
+    FlexWeight: 1;
+    Label #MemberName {
+        Style: (
+        FontSize: 16,
+        RenderBold: true,
+        TextColor: #ffffff
+        );
+       
+        Padding: (Right: 2, Top: 2);
+    }
+    Group { Anchor: (Width: 16); }
+
+    Label #PromptPrice {
+      Style: (
+        FontSize: 16,
+        RenderBold: true,
+        TextColor: #ffffff
+      );
+
+      Padding: (Right: 2, Top: 2);
+    }
+    Group { Anchor: (Width: 16); }
+
+    Label #ContextLength {
+      Style: (
+        FontSize: 16,
+        RenderBold: true,
+        TextColor: #ffffff
+      );
+
+      Padding: (Right: 2, Top: 2);
+    }
+  }
+
+}

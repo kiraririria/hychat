@@ -1,0 +1,12 @@
+{
+  "Group": "kiraririria",
+  "Name": "HyChat",
+  "Version": "1.0.0",
+  "Description": "AI Hytale chat mod",
+  "Authors": [{"Name": "KirariRiria"},{"Name":"CremanTop"}],
+  "Website": "kiraririria.github.io/hychat",
+  "Main": "kiraririria.hychat.HyChatPlugin",
+  "LoadOrder": "POSTWORLD",
+  "DisabledByDefault": false,
+  "IncludesAssetPack": true
+}

@@ -1,0 +1,122 @@
+
+$C = "../Common.ui";
+
+@PrimaryButton = TextButtonStyle(
+  Default: (Background: #3a7bd5, LabelStyle: (FontSize: 14, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+  Hovered: (Background: #4a8be5, LabelStyle: (FontSize: 14, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+  Pressed: (Background: #2a6bc5, LabelStyle: (FontSize: 14, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center))
+);
+@OpenRouterButton = TextButtonStyle(
+  Default: (Background: #FF33FF, LabelStyle: (FontSize: 14, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+  Hovered: (Background: #FF00CC, LabelStyle: (FontSize: 14, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+  Pressed: (Background: #990099, LabelStyle: (FontSize: 14, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center))
+);
+
+@SecondaryButton = TextButtonStyle(
+  Default: (Background: #2b3542, LabelStyle: (FontSize: 14, TextColor: #96a9be, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+  Hovered: (Background: #3b4552, LabelStyle: (FontSize: 14, TextColor: #b6c9de, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+  Pressed: (Background: #1b2532, LabelStyle: (FontSize: 14, TextColor: #96a9be, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center))
+);
+
+Group {
+  Anchor: (Width: 600, Height: 669);
+  Background: #141c26(0.98);
+  LayoutMode: Top;
+  Padding: (Full: 20);
+
+  Label {
+    Text: "HyChat Dashboard";
+    Anchor: (Height: 40);
+    Style: (FontSize: 24, TextColor: #ffffff, HorizontalAlignment: Center, RenderBold: true);
+  }
+
+  Group { Anchor: (Height: 1); Background: #2b3542; }
+  Group { Anchor: (Height: 16); }
+
+  Label #StatusText {
+    Text: "Welcome to HyChat!";
+    Anchor: (Height: 30);
+    Style: (FontSize: 16, TextColor: #96a9be, HorizontalAlignment: Center);
+  }
+
+  Group { Anchor: (Height: 8); }
+
+  Label {
+    Text: "Version: 1.0.0 | By KirariRiria";
+    Anchor: (Height: 24);
+    Style: (FontSize: 14, TextColor: #6e7da1, HorizontalAlignment: Center);
+  }
+
+  Group { FlexWeight: 1; }
+
+  Group {
+    LayoutMode: Center;
+    Anchor: (Height: 50);
+    TextButton #RefreshButton {
+      Text: "Refresh";
+      Anchor: (Width: 100, Height: 44);
+      Style: @PrimaryButton;
+    }
+
+    Group { Anchor: (Width: 16); }
+
+    TextButton #CloseButton {
+      Text: "Close";
+      Anchor: (Width: 100, Height: 44);
+      Style: @SecondaryButton;
+    }
+  }
+  Group {
+    LayoutMode: Center;
+    Anchor: (Height: 50);
+      TextButton #OpenRouterAuth {
+        Text: "OpenRouterAuth";
+        Anchor: (Width: 100, Height: 44);
+        Style: @OpenRouterButton;
+      }
+
+  }
+
+  Group {
+    LayoutMode: Left;
+
+    $C.@TextField #NewField {
+      FlexWeight: 1;
+      Anchor: (Height: 28);
+      Style: (
+        FontSize: 14,
+        TextColor: #ffffff(0.85)
+      );
+    }
+
+  }
+  Group {
+    LayoutMode: Center;
+    Anchor: (Height: 50);
+    Group {
+      LayoutMode: Center;
+      Anchor: (Height: 50);
+      $C.@CheckBoxWithLabel #StreamResponse {
+        @Text = "Stream Response";
+        Background: #333333;
+        Padding: (Full: 0);
+      }
+    }
+    Group {
+      LayoutMode: Center;
+      Anchor: (Height: 50);
+      $C.@CheckBoxWithLabel #OnlineModel {
+        @Text = "Use OpenRouter";
+        Background: #333333;
+        Padding: (Full: 0);
+      }
+    }
+  }
+
+  Group { Anchor: (Height: 8); }
+  Label {
+    Text: "Press ESC to close";
+    Anchor: (Height: 16);
+    Style: (FontSize: 11, TextColor: #555555, HorizontalAlignment: Center);
+  }
+}

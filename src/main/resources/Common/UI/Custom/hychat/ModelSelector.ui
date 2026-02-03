@@ -1,0 +1,80 @@
+$C = "../Common.ui";
+
+@CustomLabelStyle = LabelStyle(
+  FontSize: 14,
+  TextColor: #bfcdd5,
+  RenderBold: true,
+  RenderUppercase: true,
+  HorizontalAlignment: Center,
+  VerticalAlignment: Center
+);
+
+@CustomStyle = TextButtonStyle(
+  Default: (Background: $C.@DefaultSquareButtonDefaultBackground, LabelStyle: @CustomLabelStyle),
+  Hovered: (Background: $C.@DefaultSquareButtonHoveredBackground, LabelStyle: @CustomLabelStyle),
+  Pressed: (Background: $C.@DefaultSquareButtonPressedBackground, LabelStyle: @CustomLabelStyle),
+  Disabled: (Background: $C.@DefaultSquareButtonDisabledBackground, LabelStyle: @CustomLabelStyle),
+  Sounds: $C.@ButtonSounds,
+);
+
+
+
+
+$C.@PageOverlay {
+
+  $C.@DecoratedContainer {
+    Anchor: (Width: 600, Height: 669);
+
+
+    #Title {
+      Group {
+        $C.@Title {
+          @Text = "OpenRouter Models";
+        }
+
+        $C.@HeaderSearch {}
+      }
+    }
+
+    #Content {
+      LayoutMode: Left;
+
+      Group #Main {
+        LayoutMode: Top;
+
+        Label {
+          Anchor: ();
+          Style: (
+            FontSize: 18,
+            TextColor: #93844c,
+            RenderBold: true
+          );
+          Text: "Models";
+        }
+
+        Label #CurrentModel {
+          Style: (
+            FontSize: 16,
+            RenderBold: true,
+            TextColor: #ffffff
+          );
+
+          Padding: (Right: 2, Top: 2);
+        }
+
+        Group #IndexList {
+          Anchor: (Width: 580, Top: 2);
+          FlexWeight: 1;
+          LayoutMode: TopScrolling;
+          Padding: (Left: 7);
+          ScrollbarStyle: $C.@DefaultScrollbarStyle;
+
+          Group #IndexElements {
+            LayoutMode: Top;
+          }
+        }
+      }
+    }
+  }
+}
+
